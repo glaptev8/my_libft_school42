@@ -100,10 +100,12 @@ int		main(void)
 	printf(" %d  ", ft_toupper(61));
 	printf(" %d  ", toupper(61));*/
 	/*for tolower*/
-	printf(" %d  ", ft_tolower(103));
+/*	printf(" %d  ", ft_tolower(103));
 	printf(" %d  ", tolower(103));
 	printf(" %d  ", ft_tolower(78));
-	printf(" %d  ", tolower(78));
+	printf(" %d  ", tolower(78));*/
+	int mem[5] = {1, 4, 6 ,7, 9};
+	printf(" %s  ", memset(mem, 1, 4));
 	return (0);
 }
 
