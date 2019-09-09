@@ -20,4 +20,4 @@ lib:
 	gcc -Wall -Wextra -Werror -c $(NAME_C)
 	ar rc libft.a $(NAME_O)
 	ranlib libft.a
-	rm -rf *.o
+	rm -r *.o

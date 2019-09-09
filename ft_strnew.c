@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/05 16:25:35 by tmelia            #+#    #+#             */
-/*   Updated: 2019/09/09 12:31:01 by tmelia           ###   ########.fr       */
+/*   Created: 2019/09/09 18:39:54 by tmelia            #+#    #+#             */
+/*   Updated: 2019/09/09 18:39:56 by tmelia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+char	*ft_strnew(size_t size)
 {
-	size_t len;
-	int i;
+	char *str;
 
-	i = 0;
-	len = ft_strlen(dest);
-	while (src[i] != '\0')
-		dest[len++] = src[i++];
-	dest[len] = '\0';
-	return (dest);
+	str = (char *)malloc(sizeof(char) * (size + 1));
+	if (!str)
+		return (NULL);
+	str[size + 1] = '\0';
+	while (size > 0)
+	{
+		str[size] = '\0';
+		size--;
+	}
+	return (str);
 }

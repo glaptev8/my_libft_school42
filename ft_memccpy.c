@@ -1,16 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/09 12:32:15 by tmelia            #+#    #+#             */
+/*   Updated: 2019/09/09 12:32:16 by tmelia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memccpy(void *restrict dst, const void *src, int c, size_t n)
 {
-	char *str1;
-	char *str2;
+	unsigned char *str1;
+	unsigned char *str2;
 
-	str1 = (char *)dst;
-	str2 = (char *)src;
+	str1 = (unsigned char *)dst;
+	str2 = (unsigned char *)src;
 	while (n-- > 0)
 	{
 		*str1 = *str2;
-		if (*str1 == (char)c)
+		if (*str1 == (unsigned char)c)
 			return (++str1);
 		str1++;
 		str2++;

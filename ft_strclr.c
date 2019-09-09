@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/05 16:25:35 by tmelia            #+#    #+#             */
-/*   Updated: 2019/09/09 12:31:01 by tmelia           ###   ########.fr       */
+/*   Created: 2019/09/09 19:15:49 by tmelia            #+#    #+#             */
+/*   Updated: 2019/09/09 19:15:51 by tmelia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+void ft_strclr(char *s)
 {
-	size_t len;
-	int i;
-
-	i = 0;
-	len = ft_strlen(dest);
-	while (src[i] != '\0')
-		dest[len++] = src[i++];
-	dest[len] = '\0';
-	return (dest);
+	if (s != NULL)
+	{
+		while (s)
+		{
+			*s = '\0';
+			s++;
+		}
+	}
 }
+

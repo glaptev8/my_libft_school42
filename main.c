@@ -104,8 +104,25 @@ int		main(void)
 	printf(" %d  ", tolower(103));
 	printf(" %d  ", ft_tolower(78));
 	printf(" %d  ", tolower(78));*/
-	int mem[5] = {1, 4, 6 ,7, 9};
-	printf(" %s  ", memset(mem, 1, 4));
+/*	for ft_memset
+	//unsigned char mem[5] = "12345";
+//	printf("%s ", ft_memset(mem, '1',3));
+//	printf("%s", memset(mem, '1', 3));
+	int abc = 103;
+	unsigned char str = (char)abc;
+	printf("%c", str); */
+	/*void **gleb;
+	gleb = NULL;
+	int i = 0;
+	gleb = (void **)malloc(sizeof(void *) * 100);
+	while (i < 3)
+	{
+		gleb[i] = (void *)malloc(1000 * 1);
+		i++;
+	}
+	gleb[0] = "gleb";
+	gleb[1] = "laptev";
+//	ft_memdel(gleb);*/
 	return (0);
 }
 

@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/09 12:35:23 by tmelia            #+#    #+#             */
+/*   Updated: 2019/09/09 12:37:05 by tmelia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int		ft_atoi(const char *str)
 {
-	unsigned int num;
-	int sign;
+	unsigned int	num;
+	int				sign;
 
 	num = 0;
 	sign = 1;
@@ -21,6 +33,5 @@ int		ft_atoi(const char *str)
 		num = num * 10 + (*str - '0');
 		str++;
 	}
-
 	return (num * sign);
 }
