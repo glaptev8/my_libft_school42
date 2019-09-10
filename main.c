@@ -123,6 +123,7 @@ int		main(void)
 	gleb[0] = "gleb";
 	gleb[1] = "laptev";
 //	ft_memdel(gleb);*/
+	ft_itoa(-103);
 	return (0);
 }
 
