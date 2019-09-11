@@ -14,21 +14,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*dest;
 	int		len;
 	int		i;
 
 	i = 0;
 	len = ft_strlen(s);
-	dest = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	dest = ft_strcpy(dest, (char *)s);
-	while (*dest)
-		dest++;
-	while (i < len)
+	while (*s)
+		s++;
+	while (i <= len)
 	{
-		if (*dest == c)
-			return (dest);
-			dest--;
+		if (*s == c)
+			return ((char *)s);
+			s--;
 		i++;
 	}
 	return (NULL);

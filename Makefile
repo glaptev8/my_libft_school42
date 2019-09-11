@@ -12,12 +12,19 @@
 
 NAME_C = ft*.c
 NAME_O = ft*.o
+NAME = libft.a
 
-all:
-	gcc -Wall -Wextra -Werror  main.c -L. -lft -I libft.h 
+all: $(NAME)
 
-lib:	
-	gcc -Wall -Wextra -Werror -c $(NAME_C)
-	ar rc libft.a $(NAME_O)
-	ranlib libft.a
-	rm -r *.o
+$(NAME):
+	gcc -Wall -Wextra -Werror -I libft.h -c $(NAME_C)
+	ar rc $(NAME) $(NAME_O)
+	ranlib $(NAME)
+
+clean:
+	@/bin/rm -f $(NAME_O)
+
+fclean: clean
+	@rm -f $(NAME)
+
+re: fclean all

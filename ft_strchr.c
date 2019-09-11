@@ -14,15 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*dest;
-
-	dest = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	dest = ft_strcpy(dest, (char *)s);
-	while (*dest || *dest == '\0')
+	while (*s)
 	{
-		if (*dest == c)
-			return (dest);
-		dest++;
+		if (*s == c)
+			return ((char*)s);
+		++s;
 	}
-	return (NULL);
+	if (c == '\0')
+		return ((char*)s);
+	return (0);
 }
