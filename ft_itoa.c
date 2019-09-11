@@ -50,6 +50,5 @@ char	*ft_itoa(int n)
 	}
 	str[i] = invert_n + '0';
 	str[i + 1] = '\0';
-		printf ("%s", str);
 	return (str);
 }

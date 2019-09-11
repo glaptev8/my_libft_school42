@@ -15,6 +15,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <unistd.h>
 	size_t	ft_strlen(const char *s);
 	char	*ft_strdup(const char *s1);
 	char	*ft_strcpy(char *dest, char *src);
@@ -59,4 +60,12 @@
 	char	*ft_strtrim(char const *s);
 	char	**ft_strsplit(char const *s, char c);
 	char	*ft_itoa(int n);
+	void	ft_putchar(char c);
+	void	ft_putstr(char const *s);
+	void	ft_putendl(char const *s);
+	void	ft_putnbr(int n);
+	void	ft_putchar_fd(char c, int fd);
+	void	ft_putstr_fd(char const *s, int fd);
+	void	ft_putendl_fd(char const *s, int fd);
+	void	ft_putnbr_fd(int n, int fd);
 #endif
