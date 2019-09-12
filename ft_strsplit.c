@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/12 16:10:01 by tmelia            #+#    #+#             */
+/*   Updated: 2019/09/12 16:33:25 by tmelia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int		count_words(const char *s, char c)
 {
-	int i;
-	int count_words;
+	int	i;
+	int	count_words;
 
 	i = 0;
 	count_words = 0;
@@ -18,10 +30,10 @@ static int		count_words(const char *s, char c)
 			i++;
 		count_words++;
 	}
-	return count_words;
+	return (count_words);
 }
 
-static	char	*get_word(const char *s,char c, int j)
+static	char	*get_word(const char *s, char c, int j)
 {
 	int		i;
 	char	*str;
@@ -36,7 +48,7 @@ static	char	*get_word(const char *s,char c, int j)
 	return (str);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char	**words;
 	int		count_word;
@@ -58,6 +70,5 @@ char	**ft_strsplit(char const *s, char c)
 	}
 	words[i] = NULL;
 	i = 0;
-
 	return (words);
 }
