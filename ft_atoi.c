@@ -6,7 +6,7 @@
 /*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 12:35:23 by tmelia            #+#    #+#             */
-/*   Updated: 2019/09/09 12:37:05 by tmelia           ###   ########.fr       */
+/*   Updated: 2019/09/13 13:56:28 by tmelia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_atoi(const char *str)
 {
-	unsigned int	num;
+	long int		num;
 	int				sign;
 
 	num = 0;

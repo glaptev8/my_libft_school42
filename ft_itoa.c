@@ -33,7 +33,7 @@ char			*ft_itoa(int n)
 	int				index;
 
 	size = count_int(n);
-	if (!(str = (char *)malloc(sizeof(char) * (size + 1 + (n > 0 ? 0 : 1)))))
+	if (!(str = (char *)malloc(sizeof(char) * (size + 1 + (n >= 0 ? 0 : 1)))))
 		return (NULL);
 	if (n < 0)
 	{

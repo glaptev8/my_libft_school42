@@ -6,7 +6,7 @@
 /*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 16:10:16 by tmelia            #+#    #+#             */
-/*   Updated: 2019/09/12 16:10:17 by tmelia           ###   ########.fr       */
+/*   Updated: 2019/09/13 13:56:03 by tmelia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,23 @@ char	*ft_strtrim(char const *s)
 	int		j;
 	int		q;
 
-	if (!*s)
-		return (NULL);
 	i = 0;
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (!str)
+	if (s)
+	{
+		str = (char *)malloc(sizeof(char) * (ft_strlen(s)) + 1);
+		if (!str || !s)
+			return (NULL);
+		while (s[i] != '\0' && (s[i] == '\n' || s[i] == '\t' || s[i] == ' '))
+			i++;
+		j = ft_strlen(s) - 1;
+		while (j > 0 && s[j] && (s[j] == '\n' || s[j] == '\t' || s[j] == ' '))
+			j--;
+		q = 0;
+		while (i <= j)
+			str[q++] = s[i++];
+		str[q] = '\0';
+		return (str);
+	}
+	else
 		return (NULL);
-	while (s[i] == '\n' || s[i] == '\t' || s[i] == ' ')
-		i++;
-	j = ft_strlen(s) - 1;
-	while (s[j] == '\n' || s[j] == '\t' || s[j] == ' ')
-		j--;
-	q = 0;
-	while (i <= j)
-		str[q++] = s[i++];
-	str[q] = '\0';
-	return (str);
 }
