@@ -1,18 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/12 16:09:51 by tmelia            #+#    #+#             */
+/*   Updated: 2019/09/13 10:53:25 by tmelia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-
-static int		inverter(int n)
-{
-	int invert_n;
-
-	invert_n = 0;
-	while (n / 10 != 0)
-	{
-		invert_n = invert_n * 10 + (n % 10);
-		n /= 10;
-	}
-	invert_n = invert_n * 10 + n;
-	return (invert_n);
-}
 
 static int		count_int(int n)
 {
@@ -27,28 +25,31 @@ static int		count_int(int n)
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-	int invert_n;
-	char *str;
-	int i;
+	char			*str;
+	int				size;
+	unsigned int	nb;
+	int				index;
 
-	str = (char *)malloc(sizeof(char) * (count_int(n) + 1));
-	i = 0;
+	size = count_int(n);
+	if (!(str = (char *)malloc(sizeof(char) * (size + 1 + (n > 0 ? 0 : 1)))))
+		return (NULL);
 	if (n < 0)
 	{
 		str[0] = '-';
-		n *= -1;
-		i++;
+		nb = (unsigned int)-n;
+		size++;
 	}
-	invert_n = inverter(n);
-	while (invert_n / 10 != 0)
+	else
+		nb = n;
+	index = size - 1;
+	while (nb >= 10)
 	{
-		str[i] = invert_n % 10 + '0';
-		i++;
-		invert_n /= 10;
+		str[index--] = nb % 10 + '0';
+		nb /= 10;
 	}
-	str[i] = invert_n + '0';
-	str[i + 1] = '\0';
+	str[index] = nb + '0';
+	str[size] = '\0';
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 12:31:35 by tmelia            #+#    #+#             */
-/*   Updated: 2019/09/09 15:46:14 by tmelia           ###   ########.fr       */
+/*   Updated: 2019/09/13 11:39:45 by tmelia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *restrict dst, const void *src, size_t n)
 
 	str1 = (unsigned char *)dst;
 	str2 = (unsigned char *)src;
+	if (!str1 && !str2)
+		return (NULL);
 	while (n-- > 0)
 	{
 		*str1 = *str2;

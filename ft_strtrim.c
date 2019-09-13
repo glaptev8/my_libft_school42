@@ -22,8 +22,8 @@ char	*ft_strtrim(char const *s)
 	if (!*s)
 		return (NULL);
 	i = 0;
-	str = (char *)malloc(sizeof(char) * ft_strlen(s));
-	if (str == NULL)
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!str)
 		return (NULL);
 	while (s[i] == '\n' || s[i] == '\t' || s[i] == ' ')
 		i++;

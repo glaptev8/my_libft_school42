@@ -6,7 +6,7 @@
 /*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 16:09:03 by tmelia            #+#    #+#             */
-/*   Updated: 2019/09/12 16:13:37 by tmelia           ###   ########.fr       */
+/*   Updated: 2019/09/13 10:49:37 by tmelia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar('\0');
+	ft_putstr_fd((char *)s, fd);
+	ft_putchar_fd('\n', fd);
 }
