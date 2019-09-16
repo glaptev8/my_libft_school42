@@ -6,7 +6,7 @@
 /*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 12:50:27 by tmelia            #+#    #+#             */
-/*   Updated: 2019/09/16 12:50:32 by tmelia           ###   ########.fr       */
+/*   Updated: 2019/09/16 16:57:11 by tmelia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	else
 	{
 		if (!(list->content = ft_str_copy(content, content_size)))
+		{
+			free(list);
 			return (NULL);
+		}
 		list->content_size = content_size;
 	}
 	list->next = NULL;
