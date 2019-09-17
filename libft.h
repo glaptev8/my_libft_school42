@@ -6,7 +6,7 @@
 /*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 14:20:27 by tmelia            #+#    #+#             */
-/*   Updated: 2019/09/16 12:35:11 by tmelia           ###   ########.fr       */
+/*   Updated: 2019/09/17 14:26:51 by tmelia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
+# define FT_ULONG_MAX	((unsigned long)(~0L))
+# define FT_LONG_MAX	((long)(FT_ULONG_MAX >> 1))
 
 typedef struct		s_list
 {
@@ -82,11 +84,15 @@ void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
-unsigned char		*ft_str_copy(void const *content, size_t content_size);
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstnew(void const *content, size_t content_size);
-int					ft_structlen(t_list *list);
+void				ft_swap(int *a, int *b);
+void				ft_push_back(t_list **alst,
+		void const *content, size_t content_size);
+int					ft_struct_len(t_list *lst);
+int					ft_is_opper(char c);
+t_list				*ft_list_last(t_list *lst);
 #endif

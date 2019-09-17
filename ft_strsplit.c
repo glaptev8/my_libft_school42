@@ -6,73 +6,72 @@
 /*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 16:10:01 by tmelia            #+#    #+#             */
-/*   Updated: 2019/09/16 12:23:55 by tmelia           ###   ########.fr       */
+/*   Updated: 2019/09/17 14:48:47 by tmelia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		count_words(const char *s, char c)
-{
-	int	i;
-	int	count_words;
+#include "libft.h"
 
-	i = 0;
-	count_words = 0;
-	while (s[i] != '\0')
+static int		ft_count_words(char const *s, char c)
+{
+	int			nb_words;
+	int			str_test;
+
+	nb_words = 0;
+	str_test = 0;
+	while (*s != '\0')
 	{
-		if (s[i] == c)
+		if (str_test == 1 && *s == c)
+			str_test = 0;
+		if (str_test == 0 && *s != c)
 		{
-			i++;
-			continue ;
+			str_test = 1;
+			nb_words++;
 		}
-		while (s[i] != c && s[i] != '\0')
-			i++;
-		count_words++;
+		s++;
 	}
-	return (count_words);
+	return (nb_words);
 }
 
-static	char	*get_word(const char *s, char c, int j)
+static int		ft_word_length(char const *s, char c)
 {
-	int		i;
-	char	*str;
+	size_t		i;
 
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	i = 0;
-	while (s[j - 1] != c && j != 0)
-		j--;
-	while (s[j] != c && s[j] != '\0')
-		str[i++] = s[j++];
-	str[i] = '\0';
-	return (str);
+	while (*s && *s != c)
+	{
+		i++;
+		s++;
+	}
+	return (i);
 }
 
 char			**ft_strsplit(char const *s, char c)
 {
-	char	**words;
-	int		count_word;
-	int		i;
-	int		j;
+	char		**my_tab;
+	int			i;
+	int			nb_words;
 
-	count_word = count_words(s, c);
-	words = (char **)malloc(sizeof(char *) * (count_word + 1));
-	if (s && words)
-	{
-		j = 0;
-		i = 0;
-		while (count_word > i)
-		{
-			while (s[j] == c)
-				j++;
-			while (s[j] != c && s[j] != '\0')
-				j++;
-			words[i++] = get_word(s, c, j);
-		}
-		words[i] = NULL;
-		i = 0;
-		return (words);
-	}
-	else
+	i = 0;
+	if (!s)
 		return (NULL);
+	nb_words = ft_count_words(s, c);
+	my_tab = (char **)malloc(sizeof(char *) * nb_words + 1);
+	if (my_tab == NULL)
+		return (NULL);
+	while (nb_words--)
+	{
+		while (*s == c && *s != '\0')
+			s++;
+		if ((my_tab[i++] = ft_strsub(s, 0, ft_word_length(s, c))) == NULL)
+		{
+			free(my_tab);
+			return (NULL);
+		}
+		s += ft_word_length(s, c);
+	}
+	my_tab[i] = NULL;
+	return (my_tab);
 }

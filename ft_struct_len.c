@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_copy.c                                      :+:      :+:    :+:   */
+/*   ft_struct_len.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 12:50:05 by tmelia            #+#    #+#             */
-/*   Updated: 2019/09/16 12:50:16 by tmelia           ###   ########.fr       */
+/*   Created: 2019/09/17 12:45:48 by tmelia            #+#    #+#             */
+/*   Updated: 2019/09/17 12:45:50 by tmelia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned char	*ft_str_copy(void const *content, size_t content_size)
+int		ft_struct_len(t_list *lst)
 {
-	unsigned char	*str;
-	unsigned char	*str2;
-	int				i;
+	int i;
 
+	if (!lst)
+		return (0);
 	i = 0;
-	str = (unsigned char *)malloc(sizeof(content) * content_size);
-	if (!str)
-		return (NULL);
-	str2 = (unsigned char *)content;
-	while (str2[i] != '\0')
+	while (lst)
 	{
-		str[i] = str2[i];
 		i++;
+		lst = lst->next;
 	}
-	str[i] = '\0';
-	return (str);
+	return (i);
 }

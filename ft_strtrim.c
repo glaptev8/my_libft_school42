@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/12 16:10:16 by tmelia            #+#    #+#             */
-/*   Updated: 2019/09/16 12:23:55 by tmelia           ###   ########.fr       */
+/*   Created: 2019/09/17 15:15:55 by tmelia            #+#    #+#             */
+/*   Updated: 2019/09/17 15:16:30 by tmelia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strtrim(char const *s)
 	if (s)
 	{
 		str = (char *)malloc(sizeof(char) * (ft_strlen(s)) + 1);
-		if (!str || !s)
+		if (!str)
 			return (NULL);
 		while (s[i] != '\0' && (s[i] == '\n' || s[i] == '\t' || s[i] == ' '))
 			i++;

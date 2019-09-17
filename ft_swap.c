@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_structlen.c                                     :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 12:41:32 by tmelia            #+#    #+#             */
-/*   Updated: 2019/09/16 12:41:35 by tmelia           ###   ########.fr       */
+/*   Created: 2019/09/17 12:45:38 by tmelia            #+#    #+#             */
+/*   Updated: 2019/09/17 12:46:21 by tmelia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_structlen(t_list *list)
+void	ft_swap(int *a, int *b)
 {
-	int i;
+	int c;
 
-	i = 0;
-	if (list)
-		ft_structlen(list->next);
-	return (i++);
+	c = *b;
+	*b = *a;
+	*a = c;
 }
