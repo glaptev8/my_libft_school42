@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME_C = ft_is_opper.c ft_isdigit.c ft_lstadd.c ft_lstmap.c \
+NAME_C = ft_is_upper.c ft_isdigit.c ft_lstadd.c ft_lstmap.c \
          ft_memchr.c ft_memmove.c ft_putchar_fd.c ft_putnbr_fd.c \
          ft_strchr.c ft_strdel.c ft_striteri.c ft_strmap.c \
          ft_strncpy.c ft_strrchr.c ft_strtrim.c ft_toupper.c \
@@ -27,7 +27,7 @@ NAME_C = ft_is_opper.c ft_isdigit.c ft_lstadd.c ft_lstmap.c \
          ft_strcat.c ft_strcpy.c ft_striter.c ft_strlen.c \
          ft_strncmp.c ft_strnstr.c ft_strsub.c ft_tolower.c
 
-NAME_O = ft_is_opper.o ft_isdigit.o ft_lstadd.o ft_lstmap.o \
+NAME_O = ft_is_upper.o ft_isdigit.o ft_lstadd.o ft_lstmap.o \
          ft_memchr.o ft_memmove.o ft_putchar_fd.o ft_putnbr_fd.o \
          ft_strchr.o ft_strdel.o ft_striteri.o ft_strmap.o \
          ft_strncpy.o ft_strrchr.o ft_strtrim.o ft_toupper.o \

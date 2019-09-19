@@ -18,7 +18,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	char		*dest;
 	size_t		j;
 
-	dest = (char *)malloc(sizeof(char) * (ft_strlen(haystack) + 1));
 	dest = (char *)haystack;
 	i = 0;
 	if (!*needle)

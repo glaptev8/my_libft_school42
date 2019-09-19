@@ -6,7 +6,7 @@
 /*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 14:20:27 by tmelia            #+#    #+#             */
-/*   Updated: 2019/09/17 14:26:51 by tmelia           ###   ########.fr       */
+/*   Updated: 2019/09/19 10:35:21 by tmelia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,12 @@ typedef struct		s_list
 }					t_list;
 size_t				ft_strlen(const char *s);
 char				*ft_strdup(const char *s1);
-char				*ft_strcpy(char *dest, char *src);
+char				*ft_strcpy(char *dest, const char *src);
 char				*ft_strncpy(char *dest, const char *src, size_t n);
 char				*ft_strcat(char *dest, const char *src);
 char				*ft_strncat(char *dest, const char *src, size_t n);
-size_t				ft_strlcpy(char *restrict dst,
-		const char *restrict src, size_t size);
-size_t				ft_strlcat(char *restrict dst,
-		const char *restrict src, size_t size);
+size_t				ft_strlcat(char *dst,
+		const char *src, size_t size);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *haystack, const char *needle);
@@ -51,8 +49,8 @@ int					ft_isascii(int c);
 int					ft_tolower(int c);
 void				*ft_memset(void *s, int c, size_t n);
 void				*ft_bzero(void *s, size_t n);
-void				*ft_memcpy(void *restrict dst, const void *src, size_t n);
-void				*ft_memccpy(void *restrict dst,
+void				*ft_memcpy(void *dst, const void *src, size_t n);
+void				*ft_memccpy(void *dst,
 		const void *src, int c, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -93,6 +91,6 @@ void				ft_swap(int *a, int *b);
 void				ft_push_back(t_list **alst,
 		void const *content, size_t content_size);
 int					ft_struct_len(t_list *lst);
-int					ft_is_opper(char c);
+int					ft_isupper(char c);
 t_list				*ft_list_last(t_list *lst);
 #endif

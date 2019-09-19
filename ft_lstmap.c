@@ -19,6 +19,8 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	if (!lst)
 		return (NULL);
 	tmp = f(lst);
+	if (!tmp)
+		return (NULL);
 	tmp->next = ft_lstmap(lst->next, f);
 	return (tmp);
 }
